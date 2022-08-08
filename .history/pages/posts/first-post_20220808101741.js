@@ -7,13 +7,7 @@ const FirstPost = () => {
     <>
       <Head>
         <title>First Post</title>
-        <Script
-          src="https://connect.facebook.net/en_US/sdk.js"
-          strategy="lazyOnload"
-          onLoad={() =>
-            console.log(`script loaded correctly, window.FB has been populated`)
-          }
-        />
+        <script src="https://connect.facebook.net/en_US/sdk.js" />
       </Head>
       <h1>First post</h1>
       <h2>
