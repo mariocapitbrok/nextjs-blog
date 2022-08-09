@@ -1,8 +1,8 @@
 import Layout from '../../components/layout'
-import { getAllPostIds, getPostData } from '../../utils/posts'
+import { getAllPostIds, getPostData } from '../../lib/posts'
 
 export async function getStaticProps({ params }) {
-  const postData = await getPostData(params.id)
+  const postData = getPostData(params.id)
   return {
     props: {
       postData,
@@ -26,8 +26,6 @@ const Post = ({ postData }) => {
       {postData.id}
       <br />
       {postData.date}
-      <br />
-      <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
     </Layout>
   )
 }
